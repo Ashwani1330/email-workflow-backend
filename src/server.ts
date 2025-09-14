@@ -5,6 +5,7 @@ import passport from 'passport';
 import session from 'express-session';
 import authRoutes from './routes/auth.routes';
 import emailRoutes from './routes/email.routes'
+import calendarRoutes from './routes/calender.routes';
 
 // Import the passport config to execute the setup
 import './config/passport';
@@ -27,6 +28,7 @@ app.use(passport.session());
 // Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/emails', emailRoutes);
+app.use('/api/calendar', calendarRoutes);
 
 app.get('/', (req, res) => {
     res.send('API is running...');
